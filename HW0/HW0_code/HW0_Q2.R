@@ -1,0 +1,7 @@
+x=runif(10000, 0, 2*pi)
+y=runif(10000, 0, 1)
+u=y*cos(x)
+v=y*sin(x)
+plot(u,v,main="Scatterplot of (u,v) pairs")
+r=sqrt(u^2 + v^2)
+hist(r, col = "gray", main="Histogram of r=sqrt(u2 + v2)")
