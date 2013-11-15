@@ -36,7 +36,7 @@ for (s_index in 1:s){
 	coefs[[s_index]] <- matrix(NA,nrow=r,ncol=d)
 	for (r_index in 1:r){
 		tmp.filename <- outfile(outpath,r_index,s_index)
-		tryread <- try({tmp <- read.table(tmp.filename,header=TRUE)},silent=TRUE)
+		tryread <- try({tmp <- as.matrix(scan(tmp.filename),nrow=d,ncol=1)},silent=TRUE)
 		if (class(tryread)=="try-error"){
 			errmsg <- paste0("Failed to read file: ",tmp.filename)
 			stop(errmsg)
